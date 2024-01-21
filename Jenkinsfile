@@ -3,15 +3,17 @@ pipeline{
     stages{
         stage("build"){
             steps{
-                docker stop node-app-container
-                docker rm node-app-container
-                docker image rm node-app-todo
-                docker build . -t node-app-todo
+                sh "docker stop node-app-container"
+                sh "docker rm node-app-container"
+                sh "docker image rm node-app-todo"
+                sh "docker build . -t node-app-todo"
+                echo "contruyendo imagen"
             }
         }
         stage("deploy"){
             steps{
-                docker run -d --name node-app-container -p 8000:8000 node-app-todo
+                sh "docker run -d --name node-app-container -p 8000:8000 node-app-todo"
+                echo "desplegando contenedor"
             }
         }
     }
