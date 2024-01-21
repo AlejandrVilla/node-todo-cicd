@@ -16,8 +16,7 @@ pipeline{
                 echo "desplegando contenedor"
             }
         }
-    }
-    
+    }  
 }
 
 // pipeline {
