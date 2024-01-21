@@ -3,9 +3,9 @@ pipeline{
     stages{
         stage("build"){
             steps{
-                sh "docker stop node-app-container"
-                sh "docker rm node-app-container"
-                sh "docker image rm node-app-todo"
+                // sh "docker stop node-app-container"
+                // sh "docker rm node-app-container"
+                // sh "docker image rm node-app-todo"
                 sh "docker build . -t node-app-todo"
                 echo "contruyendo imagen"
             }
